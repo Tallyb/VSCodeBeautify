@@ -277,7 +277,8 @@ describe("VS code beautify", function() {
 			return resetVSConfig(preSettings);
 		});
 
-		it('honours line settings', function() {
+		it.only('honours line settings', function() {
+			console.log(process.env);
 			return vscode.workspace.openTextDocument(path.join(issueDir, '60.html'))
 				.then(doc => vscode.window.showTextDocument(doc)
 					.then(editor => editor.edit(te => te.setEndOfLine(vscode.EndOfLine.LF)))
